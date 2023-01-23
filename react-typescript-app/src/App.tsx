@@ -1,15 +1,11 @@
 import React from 'react';
 import './CSS/App.css';
-import { TodoItem } from './TodoItem';
+import { TodoItemContainer } from './TodoItemContainer';
 
 function App() {
   return (
     <div className="App">
-      <TodoItem/>
-      <TodoItem/>
-      <TodoItem/>
-      <TodoItem/>
-      <TodoItem/>
+      <TodoItemContainer/>
     </div>
   );
 }
