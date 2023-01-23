@@ -224,24 +224,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\miron\\.nuget\\packages\\": {},
-    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
+    "C:\\Users\\user\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\miron\\Desktop\\personal-projects\\test-react\\server\\TodoServer\\TodoServer\\TodoServer.csproj",
+      "projectUniqueName": "C:\\Users\\user\\Desktop\\personal-projects\\test-react\\server\\TodoServer\\TodoServer\\TodoServer.csproj",
       "projectName": "TodoServer",
-      "projectPath": "C:\\Users\\miron\\Desktop\\personal-projects\\test-react\\server\\TodoServer\\TodoServer\\TodoServer.csproj",
-      "packagesPath": "C:\\Users\\miron\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\miron\\Desktop\\personal-projects\\test-react\\server\\TodoServer\\TodoServer\\obj\\",
+      "projectPath": "C:\\Users\\user\\Desktop\\personal-projects\\test-react\\server\\TodoServer\\TodoServer\\TodoServer.csproj",
+      "packagesPath": "C:\\Users\\user\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\user\\Desktop\\personal-projects\\test-react\\server\\TodoServer\\TodoServer\\obj\\",
       "projectStyle": "PackageReference",
-      "fallbackFolders": [
-        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-      ],
       "configFilePaths": [
-        "C:\\Users\\miron\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+        "C:\\Users\\user\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -291,7 +286,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.101\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.400\\RuntimeIdentifierGraph.json"
       }
     }
   }
