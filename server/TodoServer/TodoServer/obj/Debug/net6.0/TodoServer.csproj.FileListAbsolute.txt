@@ -112,3 +112,5 @@ C:\Users\user\Desktop\personal-projects\test-react\server\TodoServer\TodoServer\
 C:\Users\user\Desktop\personal-projects\test-react\server\TodoServer\TodoServer\bin\Debug\net6.0\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
 C:\Users\user\Desktop\personal-projects\test-react\server\TodoServer\TodoServer\bin\Debug\net6.0\runtimes\browser\lib\net6.0\System.Text.Encodings.Web.dll
 C:\Users\user\Desktop\personal-projects\test-react\server\TodoServer\TodoServer\bin\Debug\net6.0\runtimes\win\lib\netcoreapp3.0\System.Windows.Extensions.dll
+C:\Users\user\Desktop\personal-projects\test-react\server\TodoServer\TodoServer\bin\Debug\net6.0\TodoServer.xml
+C:\Users\user\Desktop\personal-projects\test-react\server\TodoServer\TodoServer\obj\Debug\net6.0\TodoServer.xml

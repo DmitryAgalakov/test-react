@@ -4,7 +4,18 @@ import './CSS/TodoItem.css'
 import axios from 'axios'
 
 export function TodoItem() {
+ 
     let taskText: string = "Something task";
+
+    const press = function()
+    {
+      axios.get(`https://localhost:7130/1`)
+        .then(res => {
+          console.log(res);
+          taskText = res.data;
+        })
+    }
+
   return (
 
     <div className='TodoItem'>
@@ -13,7 +24,7 @@ export function TodoItem() {
 
       <input className='input-checkbox' type="checkbox" />
 
-      <input className='input-text' value={taskText}  type="text" />
+      <input className='input-text' value={taskText} type="text" />
 
       <button className='remove-button'>Remove</button>
 
@@ -26,13 +37,7 @@ export function TodoItem() {
   );
 }
 
-const press = function()
-{
-  axios.get(`https://jsonplaceholder.typicode.com/users`)
-    .then(res => {
-      console.log(res);
-    })
-}
+
 
 
 

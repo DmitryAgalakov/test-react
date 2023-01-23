@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>TodoServer</name>
+    </assembly>
+    <members>
+        <member name="M:TodoServer.Controllers.ProjectController.Get(System.Int32)">
+            <summary>
+            Get a specific Note.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:TodoServer.Controllers.ProjectController.Add">
+            <summary>
+            Add a specific Note.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:TodoServer.Controllers.ProjectController.Delete(System.Guid)">
+            <summary>
+            Deletes a specific Note.
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="T:TodoServer.Migrations.InitialSchema2">
+            <inheritdoc />
+        </member>
+        <member name="M:TodoServer.Migrations.InitialSchema2.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:TodoServer.Migrations.InitialSchema2.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:TodoServer.Migrations.InitialSchema2.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
+    </members>
+</doc>
