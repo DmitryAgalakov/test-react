@@ -1,6 +1,10 @@
+using Microsoft.EntityFrameworkCore;
+using TodoServer;
+
 var builder = WebApplication.CreateBuilder(args);
 
-
+string connetctionString = builder.Configuration.GetConnectionString("DefaultConnection");
+builder.Services.AddDbContext<TodoDbContext>(options => options.UseSqlServer(connetctionString));
 builder.Services.AddControllers();
 
 builder.Services.AddEndpointsApiExplorer();
