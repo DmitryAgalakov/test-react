@@ -1,61 +1,61 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using TodoServer.Models;
 
-namespace TodoServer.Controllers
+namespace TodoServer.Controllers;
+
+public class ProjectController : Controller
 {
-    public class ProjectController : Controller
+
+    private readonly TodoDbContext _context;
+    public ProjectController(TodoDbContext context)
     {
-        private readonly TodoDbContext _context;
-        public ProjectController(TodoDbContext context)
-        {
-            _context = context;
-        }
-
-        public IActionResult Index()
-        {
-            return View();
-        }
-
-        /// <summary>
-        /// Get a specific Note.
-        /// </summary>
-        /// <returns></returns>
-        [HttpGet("{id}")]
-        public string Get(int id)
-        {
-            return "hello world";
-        }
-
-        /// <summary>
-        /// Add a specific Note.
-        /// </summary>
-        /// <returns></returns>
-        [HttpPost()]
-        public async Task<IActionResult> Add()
-        {
-            
-            return NoContent();
-        }
-
-        /// <summary>
-        /// Deletes a specific Note.
-        /// </summary>
-        /// <param name="id"></param>
-        /// <returns></returns>
-        [HttpDelete("{id}")]
-        public async Task<IActionResult> Delete(Guid id)
-        {
-            var note = await _context.Notes.FindAsync(id);
-
-            if (note is null)
-            {
-                return NotFound();
-            }
-
-            _context.Notes.Remove(note);
-            await _context.SaveChangesAsync();
-
-            return NoContent();
-        }
+        _context = context;
     }
+
+
+
+    [HttpPost("create")]
+    public async Task<IActionResult> Create([FromBody] Project project)
+    {
+        // _context.Projects.Add(project);
+        //await _context.SaveChangesAsync();
+
+        return Ok(project);
+    }
+
+
+
+    [HttpGet("read/{id?}")]
+    public async Task<IActionResult> Read(Guid guid)
+    {
+        return Ok();
+    }
+
+
+
+    [HttpPut("update")]
+    public async Task<IActionResult> Update(Project project)
+    {
+        return Ok();
+    }
+
+
+
+    [HttpDelete("delete/{id?}")]
+    public async Task<IActionResult> Delete(Guid guid)
+    {
+        return Ok();
+    }
+
+
 }
+
+
+
+//Project project = new()
+//{
+//    Id = id,
+//    Name = "New project 1",
+//    Notes = new()
+//};

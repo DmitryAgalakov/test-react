@@ -1,43 +1,50 @@
-import React from 'react';
-import {useState, useEffect} from 'react'
+import React, { useState } from 'react';
 import './CSS/TodoItem.css'
-import axios from 'axios'
 
-export function TodoItem() {
- 
-    let taskText: string = "Something task";
 
-    const press = function()
-    {
-      axios.get(`https://localhost:7130/1`)
-        .then(res => {
-          console.log(res);
-          taskText = res.data;
-        })
-    }
 
-  return (
-
-    <div className='TodoItem'>
-
-      <h3 className='header'>Hello, world!</h3>
-
-      <input className='input-checkbox' type="checkbox" />
-
-      <input className='input-text' value={taskText} type="text" />
-
-      <button className='remove-button'>Remove</button>
-
-      <button className='add-button' onClick={press}>Add</button>
-
-      {/* <button className='add-button' onClick={()=> setCount(count + 1)}>Add</button> */}
-      {/* <h2>Count = {count}</h2> */}
-    </div>
-
-  );
+export interface ITodoitem {
+  id: number
+  text: string
+  isChecked: boolean
 }
 
 
 
+interface ITodoitemProps {
+  todoitem: ITodoitem
+  onRemoved: (i: number) => void
+}
+
+
+
+export function TodoItem(props: ITodoitemProps) {
+
+  const [itemText, setItemText] = useState(props.todoitem.text);
+  const [itemIsChecked, setItemIsChecked] = useState(props.todoitem.isChecked)
+
+  function createItem(){
+
+  }
+
+  function removeItem(){
+      
+  }
+  
+  return (
+    <div className='todoitem' >
+      <input className='input-checkbox' type="checkbox"
+        checked={itemIsChecked}
+        onChange={event => setItemIsChecked(event.target.checked)} />
+
+      <input className='input-text' type="text"
+        value={itemText}
+        onChange={event => setItemText(event.target.value)}/>
+
+      <button className='remove-button' onClick={() => { props.onRemoved(props.todoitem.id) }}>Удалить</button>
+    </div>
+
+  );
+}
 
 

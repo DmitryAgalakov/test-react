@@ -1,11 +1,11 @@
 import React from 'react';
 import './CSS/App.css';
-import { TodoItemContainer } from './TodoItemContainer';
+import { TabletBox } from './TabletBox';
 
 function App() {
   return (
     <div className="App">
-      <TodoItemContainer/>
+      <TabletBox/>
     </div>
   );
 }

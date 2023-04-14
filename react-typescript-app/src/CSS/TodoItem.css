@@ -1,39 +1,30 @@
-.TodoItem {
-    background-color: aquamarine;
-    width: 290px;
-    height: 270px;
-    margin: 30px;
-    border-radius: 10px;
-    padding: 10px;
+.todoitem {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    
+    margin-bottom: 10px;
 }
 
-.header{
-    color: blue;
+.header {
+    color: #e2e2e2;
     text-align: center;
-    margin-bottom: 5px;
+    margin-bottom: 15px;
 }
 
-.input-checkbox{
-    transform: scale(1.5);
-    vertical-align:middle;
+.input-checkbox {
+    max-width: 20px;
+    max-height: 20px;
+    
     align-self: center;
-    margin-right: 10px;
 }
 
-.input-text{
-    margin-right: 5px;
+.input-text {
     width: 150px;
     height: 25px;
 }
 
-.remove-button{
-    width: 80px;
-    height: 25px;
-}
-
-.add-button{
-    vertical-align: bottom;
-    margin-top: 10px;
+.remove-button {
     width: 80px;
     height: 25px;
 }
