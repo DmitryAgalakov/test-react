@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "UIoFcCyr57ZKLoYJIeFCb4NJeKI8Dbj+Vx1QsbkUrBlpdVRUb2GRF/tZ8KODus3vARVtxFXtQG/acYy+es5lmw==",
+  "dgSpecHash": "Gt+zPF40RL1KFyKLmp9hC8kPUfwFs3sqfYEPpM7i5g1XFwwhunBGhoNrvW8gEiOZ2eT7PJKI7mB20Gaj8U2i7Q==",
   "success": true,
   "projectFilePath": "C:\\Users\\Dima\\Documents\\GitHub\\test-react\\server\\TodoServer\\TodoServer\\TodoServer.csproj",
   "expectedPackageFiles": [

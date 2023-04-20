@@ -2,7 +2,9 @@
 using Microsoft.EntityFrameworkCore;
 using TodoServer.Models;
 
+
 namespace TodoServer.Controllers;
+
 
 public class ProjectController : Controller
 {
@@ -18,18 +20,36 @@ public class ProjectController : Controller
     [HttpPost("create")]
     public async Task<IActionResult> Create([FromBody] Project project)
     {
-        // _context.Projects.Add(project);
-        //await _context.SaveChangesAsync();
+        if (project == null)
+        {
+            return BadRequest("Объект был 'null'");
+        }
 
-        return Ok(project);
+        project.Id = Guid.NewGuid();
+        project.Notes
+
+        await _context.Projects.AddAsync(project);
+        await _context.SaveChangesAsync();
+
+        return Ok(project.Id);
     }
 
 
-
+    /// <summary>
+    /// Gets a value indicating whether this <see cref="Project"/> is shared.
+    /// </summary>
+    /// <value><c>true</c> if shared; otherwise, <c>false</c>.</value>
     [HttpGet("read/{id?}")]
-    public async Task<IActionResult> Read(Guid guid)
+    public async Task<IActionResult> Get([FromBody] Guid guid)
     {
-        return Ok();
+        Project? project = await _context.Projects.FirstOrDefaultAsync(i => i.Id == guid);
+        
+        if (project == null)
+        {
+            return BadRequest("Такого проекта в БД нет.");
+        }
+        
+        return Ok(project);
     }
 
 
@@ -37,6 +57,7 @@ public class ProjectController : Controller
     [HttpPut("update")]
     public async Task<IActionResult> Update(Project project)
     {
+        await _context.SaveChangesAsync();
         return Ok();
     }
 
@@ -45,6 +66,7 @@ public class ProjectController : Controller
     [HttpDelete("delete/{id?}")]
     public async Task<IActionResult> Delete(Guid guid)
     {
+        await _context.SaveChangesAsync();
         return Ok();
     }
 
