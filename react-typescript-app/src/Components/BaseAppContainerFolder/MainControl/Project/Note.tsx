@@ -28,22 +28,22 @@ const dummyProject = {
 
 interface INoteProps {
     note: INote,
-    onRemovedNote: (i: number) => void,
+    onRemovedNote: (i: string) => void,
 }
 
 
 export function Note(props: INoteProps) {
 
-    const [todoItems, setTodoItems] = useState([{ id: Date.now(), text: "", isChecked: false }]);
+    const [todoItems, setTodoItems] = useState([{ id: crypto.randomUUID(), text: "", isChecked: false }]);
 
     function addTodoItem() {
         if (todoItems.length < 4) {
-            let newTodoItem = { id: Date.now(), text: "", isChecked: false };
+            let newTodoItem = { id: crypto.randomUUID(), text: "", isChecked: false };
             setTodoItems([...todoItems, newTodoItem]);
         }
     }
 
-    function removeTodoItem(id: number) {
+    function removeTodoItem(id: string) {
         let newTodoItems = todoItems.filter(i => i.id !== id);
         setTodoItems(newTodoItems);
     }
@@ -75,7 +75,7 @@ export function Note(props: INoteProps) {
             <h3 className='header'>{props.note.name}</h3>
 
             {todoItems.map(item =>
-                <TodoItem key={item.id} todoitem={item} onRemoved={removeTodoItem} />)}
+                <TodoItem key={item.id} todoitem={item} onRemoveTodoitemById={removeTodoItem} />)}
 
             <button className='add-button'
              onClick={addTodoItem}>

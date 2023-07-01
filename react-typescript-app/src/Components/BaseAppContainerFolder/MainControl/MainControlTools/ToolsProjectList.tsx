@@ -11,7 +11,7 @@ export function ToolsProjectList(props: IToolsProjectListProps){
     return (
         <div className="ToolsProjectList">
             {props.projects.map(project =>
-                 <ToolsProjectListItem projectName={project.name}/>)}
+                 <ToolsProjectListItem key={project.id} projectName={project.name}/>)}
         </div>
     );
 }

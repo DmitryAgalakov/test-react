@@ -3,7 +3,7 @@ import './Project.css';
 import { Note } from './Note';
 
 export interface INote {
-    id: number
+    id: string
     name: string
     notes: string
 }
@@ -14,19 +14,19 @@ interface IProjectProps {
 
 export function Project(props: IProjectProps) {
 
-    const [notes, setNotes] = useState([{ id: 0, name: "Ежедневные заметки", notes: "notes 0" },
-                                            { id: 1, name: "Идеи", notes: "notes 1" },
-                                            { id: 2, name: "Долгосрочные покупки", notes: "notes 1" },
-                                            { id: 3, name: "Важное", notes: "notes 1" }]);
+    const [notes, setNotes] = useState([{ id: crypto.randomUUID(), name: "Ежедневные заметки", notes: "notes 0" },
+                                            { id: crypto.randomUUID(), name: "Идеи", notes: "notes 1" },
+                                            { id: crypto.randomUUID(), name: "Долгосрочные покупки", notes: "notes 1" },
+                                            { id: crypto.randomUUID(), name: "Важное", notes: "notes 1" }]);
 
 
     function addNote() {
-        let newNote = { id: Date.now(), name: "New header", notes: "new" };
+        let newNote = { id: crypto.randomUUID(), name: "New header", notes: "new" };
         setNotes([...notes, newNote]);
     }
 
 
-    function removeNote(id: number) {
+    function removeNote(id: string) {
         let newNotes = notes.filter(t => t.id !== id);
         setNotes(newNotes);
     }
