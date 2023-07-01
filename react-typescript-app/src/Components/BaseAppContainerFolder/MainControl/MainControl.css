@@ -1,0 +1,9 @@
+.MainControl{
+    display: grid;
+    grid-template-columns: 400px auto;
+    grid-column-gap: 30px;
+
+    padding: 0;
+    margin: 0;
+    height: 100%;
+}

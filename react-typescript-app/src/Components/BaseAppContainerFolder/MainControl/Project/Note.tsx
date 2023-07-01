@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
-import './CSS/Tablet.css';
+import './Note.css';
 import { TodoItem } from './TodoItem';
-import { ITablet } from './TabletBox';
+import { INote } from './Project';
 import axios from 'axios';
 
-const proj = {
+const dummyProject = {
     id: "3fa85f64-5717-4562-b3fc-2c963f66afa6",
     name: "project name",
     notes: [
@@ -26,13 +26,13 @@ const proj = {
     ]
 }
 
-interface ITabletProps {
-    tablet: ITablet,
-    onRemovedTablet: (i: number) => void,
+interface INoteProps {
+    note: INote,
+    onRemovedNote: (i: number) => void,
 }
 
 
-export function Tablet(props: ITabletProps) {
+export function Note(props: INoteProps) {
 
     const [todoItems, setTodoItems] = useState([{ id: Date.now(), text: "", isChecked: false }]);
 
@@ -56,15 +56,23 @@ export function Tablet(props: ITabletProps) {
     }
 
     function sendPost() {
-        axios.post(`https://localhost:7130/create`, proj)
+        axios.post(`https://localhost:7130/create`, createProject())
             .then(res => {
                 console.log(res);
             })
     }
 
+    function createProject(){
+        let newProject = dummyProject;
+        newProject.id = crypto.randomUUID();
+        newProject.notes[0].id = crypto.randomUUID();
+        newProject.notes[0].todoitems[0].id = crypto.randomUUID();
+        return newProject;
+    }
+
     return (
-        <div className='Tablet'>
-            <h3 className='header'>{props.tablet.name}</h3>
+        <div className='Note'>
+            <h3 className='header'>{props.note.name}</h3>
 
             {todoItems.map(item =>
                 <TodoItem key={item.id} todoitem={item} onRemoved={removeTodoItem} />)}
@@ -73,15 +81,15 @@ export function Tablet(props: ITabletProps) {
              onClick={addTodoItem}>
                 Добавить</button>
 
-            <button className='remove-tablet-button'
-             onClick={() => props.onRemovedTablet(props.tablet.id)}>
+            <button className='remove-note-button'
+             onClick={() => props.onRemovedNote(props.note.id)}>
                 Удалить список</button>
 
-            <button className='remove-tablet-button'
+            <button className='remove-note-button'
              onClick={sendGet}>
                 Гет запрос</button>
 
-            <button className='remove-tablet-button'
+            <button className='remove-note-button'
              onClick={sendPost}>
                 Пост запрос</button>
 

@@ -1,0 +1,28 @@
+.Project {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    row-gap: 30px;
+  }
+
+
+.Add-new-note-button-container{
+  display: flex;
+  justify-content: center;
+
+  width: 300px;
+  height: 270px;
+  
+  padding: 20px 20px 10px 20px;
+
+  border: solid;
+  border-radius: 10px;
+  border-width: 1px;
+  border-color: #525252;
+  }
+
+  
+.Add-new-note-button{
+  width: 200px;
+  height: 50px;
+}
+ 

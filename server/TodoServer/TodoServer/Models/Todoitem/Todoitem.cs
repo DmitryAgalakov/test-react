@@ -1,6 +1,6 @@
 ﻿namespace TodoServer;
 
-public class Todoitem : ITodoitem
+public class Todoitem
 {
 
     public Guid Id { get; set; }

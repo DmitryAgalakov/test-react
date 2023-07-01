@@ -1,0 +1,19 @@
+.MainControlTools{
+    width: 400px;
+    height: 100%;
+
+    background-color: #242424;
+
+    border-right: solid;
+    border-right-color: #525252;
+    border-right-width: 1px;
+}
+
+.button-container{
+    display: flex;
+}
+
+.add-project-button{
+    width: 200px;
+    height: 50px;
+}

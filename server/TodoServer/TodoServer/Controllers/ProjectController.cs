@@ -25,9 +25,6 @@ public class ProjectController : Controller
             return BadRequest("Объект был 'null'");
         }
 
-        project.Id = Guid.NewGuid();
-        project.Notes
-
         await _context.Projects.AddAsync(project);
         await _context.SaveChangesAsync();
 
@@ -35,12 +32,8 @@ public class ProjectController : Controller
     }
 
 
-    /// <summary>
-    /// Gets a value indicating whether this <see cref="Project"/> is shared.
-    /// </summary>
-    /// <value><c>true</c> if shared; otherwise, <c>false</c>.</value>
     [HttpGet("read/{id?}")]
-    public async Task<IActionResult> Get([FromBody] Guid guid)
+    public async Task<IActionResult> Get(Guid guid)
     {
         Project? project = await _context.Projects.FirstOrDefaultAsync(i => i.Id == guid);
         

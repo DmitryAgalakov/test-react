@@ -1,11 +1,10 @@
-import React from 'react';
-import './CSS/App.css';
-import { TabletBox } from './TabletBox';
+import { BaseAppContainer } from './Components/BaseAppContainerFolder/BaseAppContainer';
+import './App.css';
 
 function App() {
   return (
     <div className="App">
-      <TabletBox/>
+      <BaseAppContainer/>
     </div>
   );
 }

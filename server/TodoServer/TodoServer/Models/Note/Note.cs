@@ -2,7 +2,7 @@
 
 namespace TodoServer.Models;
 
-public class Note : INote
+public class Note
 {
     public Guid Id { get; set; }
     public string Name { get; set; }
